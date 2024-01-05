@@ -18,6 +18,16 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    #backTopButton {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+    }
+  </style>
+  <script>
+
+  </script>
 </head>
 
 <body>
@@ -427,6 +437,7 @@
 
 
 
+      <button class="btn btn-primary" id="backTopButton">Yukarı</button>
 
 
 
@@ -512,7 +523,7 @@
       <br /> <br /> <br />
 
 
-      <div class="card fixed-bottom text-center mt-5" style="background-color:#312f2f; color:white;">
+      <div class="card fixed-bottom44 text-center mt-5" style="background-color:#312f2f; color:white;">
         <div class="card-body">
           <a href="#" id="footer-twitter" class="btn btn-primary"><span class="fab fa-twitter "> twitter</span></a>
           <a href="https://www.linkedin.com/in/osman-kilic-809694231/" id="footer-linkedin"
@@ -730,6 +741,26 @@
 
               $('#mySifreHatirlat').modal();
             });
+
+
+            $(window).scroll(function () {
+
+              if ($(window).scrollTop() > 70) {
+                $('#backTopButton').fadeIn();
+              } else {
+                $('#backTopButton').fadeOut();
+              }
+
+
+            });
+
+            $('#backTopButton').click(function () {
+
+              $("body", "html").animate({
+                scrollTop: 0
+              }, 1000);
+            });
+
           });
         </script>
 
@@ -742,6 +773,11 @@
             });
 
           })
+        </script>
+
+        <!-- Button Back Top-->
+        <script>
+
         </script>
 </body>
 
